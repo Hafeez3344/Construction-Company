@@ -63,79 +63,79 @@ export default function BackupPage() {
   };
 
   return (
-    <div className="space-y-8 max-w-4xl mx-auto pb-16">
+    <div className="space-y-4 sm:space-y-8 max-w-4xl mx-auto pb-12">
       
       {/* Header Banner */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
         <div className="flex items-center gap-2">
-          <Database className="w-6 h-6 text-amber-500" />
-          <h1 className="text-2xl font-bold text-brand-900">Data Backup & System Maintenance</h1>
+          <Database className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 shrink-0" />
+          <h1 className="text-lg sm:text-2xl font-bold text-brand-900">Data Backup & Maintenance</h1>
         </div>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
           Keep offline backups of all measurement sheets and work order records in JSON or CSV formats.
         </p>
       </div>
 
       {message && (
-        <div className="bg-emerald-50 border border-emerald-300 text-emerald-800 p-4 rounded-xl text-xs font-bold flex items-center gap-2">
-          <CheckCircle className="w-5 h-5 text-emerald-600" />
+        <div className="bg-emerald-50 border border-emerald-300 text-emerald-800 p-3 sm:p-4 rounded-xl text-xs font-bold flex items-center gap-2">
+          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
           {message}
         </div>
       )}
 
       {/* Backup Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-6">
         
         {/* Export JSON */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
           <div className="flex items-center gap-3">
-            <div className="bg-brand-50 p-3 rounded-xl text-brand-900">
-              <FileJson className="w-6 h-6" />
+            <div className="bg-brand-50 p-2.5 sm:p-3 rounded-lg sm:rounded-xl text-brand-900 shrink-0">
+              <FileJson className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 text-sm">Full Data Backup (JSON)</h3>
-              <p className="text-xs text-slate-500">Download complete dataset including site photos, measurements & approvals.</p>
+              <h3 className="font-semibold text-slate-900 text-xs sm:text-sm">Full Data Backup (JSON)</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500">Download complete dataset including site photos, measurements & approvals.</p>
             </div>
           </div>
           <button
             onClick={handleExportJSON}
-            className="w-full flex items-center justify-center gap-2 bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs py-2.5 rounded-xl shadow transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs py-2 sm:py-2.5 rounded-xl shadow transition-colors"
           >
             <Download className="w-4 h-4 text-amber-400" /> Export JSON Backup
           </button>
         </div>
 
         {/* Export CSV */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
           <div className="flex items-center gap-3">
-            <div className="bg-amber-50 p-3 rounded-xl text-amber-600">
-              <FileSpreadsheet className="w-6 h-6" />
+            <div className="bg-amber-50 p-2.5 sm:p-3 rounded-lg sm:rounded-xl text-amber-600 shrink-0">
+              <FileSpreadsheet className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 text-sm">Work Orders Spreadsheet (CSV)</h3>
-              <p className="text-xs text-slate-500">Export work orders into Excel / CSV format for accounting.</p>
+              <h3 className="font-semibold text-slate-900 text-xs sm:text-sm">Work Orders Spreadsheet (CSV)</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500">Export work orders into Excel / CSV format for accounting.</p>
             </div>
           </div>
           <button
             onClick={handleExportCSV}
-            className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-brand-950 font-bold text-xs py-2.5 rounded-xl shadow transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-brand-950 font-bold text-xs py-2 sm:py-2.5 rounded-xl shadow transition-colors"
           >
             <Download className="w-4 h-4" /> Export CSV Spreadsheet
           </button>
         </div>
 
         {/* Import JSON */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
           <div className="flex items-center gap-3">
-            <div className="bg-blue-50 p-3 rounded-xl text-blue-600">
-              <Upload className="w-6 h-6" />
+            <div className="bg-blue-50 p-2.5 sm:p-3 rounded-lg sm:rounded-xl text-blue-600 shrink-0">
+              <Upload className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 text-sm">Restore JSON Backup</h3>
-              <p className="text-xs text-slate-500">Import a previously saved JSON backup file into local storage.</p>
+              <h3 className="font-semibold text-slate-900 text-xs sm:text-sm">Restore JSON Backup</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500">Import a previously saved JSON backup file into local storage.</p>
             </div>
           </div>
-          <label className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2.5 rounded-xl border border-slate-300 cursor-pointer transition-colors">
+          <label className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2 sm:py-2.5 rounded-xl border border-slate-300 cursor-pointer transition-colors">
             <Upload className="w-4 h-4 text-brand-900" /> Choose Backup File (.json)
             <input
               type="file"
@@ -147,19 +147,19 @@ export default function BackupPage() {
         </div>
 
         {/* Reset to Seed Data */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
           <div className="flex items-center gap-3">
-            <div className="bg-rose-50 p-3 rounded-xl text-rose-600">
-              <RotateCcw className="w-6 h-6" />
+            <div className="bg-rose-50 p-2.5 sm:p-3 rounded-lg sm:rounded-xl text-rose-600 shrink-0">
+              <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 text-sm">Reset Demo Dataset</h3>
-              <p className="text-xs text-slate-500">Revert all work orders back to the pre-seeded Jandool Construction demo dataset.</p>
+              <h3 className="font-semibold text-slate-900 text-xs sm:text-sm">Reset Demo Dataset</h3>
+              <p className="text-[10px] sm:text-xs text-slate-500">Revert all work orders back to the pre-seeded Jandool Construction demo dataset.</p>
             </div>
           </div>
           <button
             onClick={handleResetData}
-            className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold text-xs py-2.5 rounded-xl border border-rose-200 transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold text-xs py-2 sm:py-2.5 rounded-xl border border-rose-200 transition-colors"
           >
             <RotateCcw className="w-4 h-4" /> Reset to Demo Records
           </button>

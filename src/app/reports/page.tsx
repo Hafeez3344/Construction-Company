@@ -66,80 +66,80 @@ export default function ReportsPage() {
   };
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-4 sm:space-y-8 pb-12">
       
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
         <div>
           <div className="flex items-center gap-2">
-            <BarChart3 className="w-6 h-6 text-amber-500" />
-            <h1 className="text-2xl font-bold text-brand-900">Reports & Executive Analytics</h1>
+            <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 shrink-0" />
+            <h1 className="text-lg sm:text-2xl font-bold text-brand-900">Reports & Analytics</h1>
           </div>
-          <p className="text-xs text-slate-500 mt-1">
+          <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
             Financial breakdown, work-type distribution, and project completion summaries for Jandool Construction.
           </p>
         </div>
 
         <button
           onClick={handleExportCSV}
-          className="flex items-center justify-center gap-2 bg-brand-900 hover:bg-brand-800 text-white font-bold px-5 py-2.5 rounded-xl shadow transition-all text-xs"
+          className="flex items-center justify-center gap-2 bg-brand-900 hover:bg-brand-800 text-white font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl shadow transition-all text-xs w-full sm:w-auto"
         >
           <FileSpreadsheet className="w-4 h-4 text-amber-400" />
-          Export Summary Report (CSV)
+          Export Summary (CSV)
         </button>
       </div>
 
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-          <p className="text-xs font-bold text-slate-500 uppercase">Grand Expenditure</p>
-          <p className="text-2xl font-bold text-brand-900 mt-1">PKR {(totalSpent / 1000000).toFixed(2)} M</p>
-          <p className="text-xs text-slate-500 mt-0.5">PKR {totalSpent.toLocaleString()} Total</p>
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+          <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase">Grand Expenditure</p>
+          <p className="text-base sm:text-2xl font-bold text-brand-900 mt-0.5 sm:mt-1">PKR {(totalSpent / 1000000).toFixed(2)} M</p>
+          <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5">PKR {totalSpent.toLocaleString()}</p>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-          <p className="text-xs font-bold text-slate-500 uppercase">Average WO Value</p>
-          <p className="text-2xl font-bold text-amber-600 mt-1">PKR {(avgCost / 1000000).toFixed(2)} M</p>
-          <p className="text-xs text-slate-500 mt-0.5">Across {totalOrders} Work Orders</p>
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+          <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase">Average WO Value</p>
+          <p className="text-base sm:text-2xl font-bold text-amber-600 mt-0.5 sm:mt-1">PKR {(avgCost / 1000000).toFixed(2)} M</p>
+          <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5">Across {totalOrders} Orders</p>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-          <p className="text-xs font-bold text-slate-500 uppercase">Advance Recovered</p>
-          <p className="text-2xl font-bold text-emerald-700 mt-1">PKR {(totalAdvance / 1000000).toFixed(2)} M</p>
-          <p className="text-xs text-emerald-600 mt-0.5">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+          <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase">Advance Recovered</p>
+          <p className="text-base sm:text-2xl font-bold text-emerald-700 mt-0.5 sm:mt-1">PKR {(totalAdvance / 1000000).toFixed(2)} M</p>
+          <p className="text-[10px] sm:text-xs text-emerald-600 mt-0.5">
             {totalSpent > 0 ? ((totalAdvance / totalSpent) * 100).toFixed(1) : 0}% Collected
           </p>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
-          <p className="text-xs font-bold text-slate-500 uppercase">Outstanding Dues</p>
-          <p className="text-2xl font-bold text-rose-700 mt-1">PKR {(totalDue / 1000000).toFixed(2)} M</p>
-          <p className="text-xs text-rose-600 mt-0.5">Pending Payment</p>
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+          <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase">Outstanding Dues</p>
+          <p className="text-base sm:text-2xl font-bold text-rose-700 mt-0.5 sm:mt-1">PKR {(totalDue / 1000000).toFixed(2)} M</p>
+          <p className="text-[10px] sm:text-xs text-rose-600 mt-0.5">Pending Payment</p>
         </div>
 
       </div>
 
       {/* Visual Analytics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         
         {/* Expenditure by Type of Work */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-          <div className="flex items-center justify-between border-b pb-3">
-            <h2 className="text-base font-semibold text-brand-900 uppercase">Expenditure by Work Category</h2>
-            <PieChart className="w-5 h-5 text-amber-500" />
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+          <div className="flex items-center justify-between border-b pb-2.5 sm:pb-3">
+            <h2 className="text-sm sm:text-base font-semibold text-brand-900 uppercase">Expenditure by Work Category</h2>
+            <PieChart className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {typeMetrics.map(item => (
-              <div key={item.type} className="space-y-1.5 text-xs">
-                <div className="flex justify-between font-bold text-slate-800">
-                  <span>{item.type} Construction ({item.count} orders)</span>
+              <div key={item.type} className="space-y-1 text-xs">
+                <div className="flex justify-between font-bold text-slate-800 text-[11px] sm:text-xs">
+                  <span>{item.type} ({item.count})</span>
                   <span className="font-mono text-brand-900">PKR {item.amount.toLocaleString()} ({item.pct.toFixed(1)}%)</span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                   <div
-                    className="bg-brand-900 h-2.5 rounded-full transition-all"
+                    className="bg-brand-900 h-2 rounded-full transition-all"
                     style={{ width: `${Math.min(100, Math.max(0, item.pct))}%` }}
                   />
                 </div>
@@ -149,24 +149,24 @@ export default function ReportsPage() {
         </div>
 
         {/* Status Distribution Progress */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-          <div className="flex items-center justify-between border-b pb-3">
-            <h2 className="text-base font-semibold text-brand-900 uppercase">Work Order Status Distribution</h2>
-            <TrendingUp className="w-5 h-5 text-amber-500" />
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+          <div className="flex items-center justify-between border-b pb-2.5 sm:pb-3">
+            <h2 className="text-sm sm:text-base font-semibold text-brand-900 uppercase">Status Distribution</h2>
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {statusMetrics.map(item => {
               const pct = totalOrders > 0 ? (item.count / totalOrders) * 100 : 0;
               return (
                 <div key={item.label} className="space-y-1 text-xs">
-                  <div className="flex justify-between font-bold text-slate-800">
+                  <div className="flex justify-between font-bold text-slate-800 text-[11px] sm:text-xs">
                     <span>{item.label}</span>
                     <span>{item.count} orders ({pct.toFixed(0)}%)</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                  <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                     <div
-                      className={`${item.color} h-2.5 rounded-full transition-all`}
+                      className={`${item.color} h-2 rounded-full transition-all`}
                       style={{ width: `${Math.min(100, Math.max(0, pct))}%` }}
                     />
                   </div>
@@ -179,8 +179,8 @@ export default function ReportsPage() {
       </div>
 
       {/* Detail Executive Ledger Table */}
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4">
-        <h2 className="text-base font-semibold text-brand-900 uppercase border-b pb-3">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-6 space-y-3 sm:space-y-4">
+        <h2 className="text-sm sm:text-base font-semibold text-brand-900 uppercase border-b pb-2.5 sm:pb-3">
           Summary Ledger Statement
         </h2>
 
@@ -188,43 +188,43 @@ export default function ReportsPage() {
           <table className="w-full text-xs text-left">
             <thead className="bg-slate-800 text-white font-bold uppercase">
               <tr>
-                <th className="p-3">WO No</th>
-                <th className="p-3">Department</th>
-                <th className="p-3">Type</th>
-                <th className="p-3 text-right">Area (m²)</th>
-                <th className="p-3 text-right">Total Cost (PKR)</th>
-                <th className="p-3 text-right">Advance Received</th>
-                <th className="p-3 text-right">Payment Due</th>
-                <th className="p-3 text-center">Status</th>
+                <th className="p-2.5 sm:p-3">WO No</th>
+                <th className="p-2.5 sm:p-3">Department</th>
+                <th className="p-2.5 sm:p-3">Type</th>
+                <th className="p-2.5 sm:p-3 text-right">Area (m²)</th>
+                <th className="p-2.5 sm:p-3 text-right">Total Cost</th>
+                <th className="p-2.5 sm:p-3 text-right">Advance</th>
+                <th className="p-2.5 sm:p-3 text-right">Due</th>
+                <th className="p-2.5 sm:p-3 text-center">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">
               {workOrders.map(w => (
                 <tr key={w.id} className="hover:bg-slate-50">
-                  <td className="p-3 font-mono font-bold text-brand-900">{w.id}</td>
-                  <td className="p-3 font-semibold text-slate-800">{w.departmentName}</td>
-                  <td className="p-3 font-semibold text-slate-700">{w.typeOfWork}</td>
-                  <td className="p-3 text-right font-mono">{w.measurements?.areaCoveredSqM?.toLocaleString() || 0}</td>
-                  <td className="p-3 text-right font-mono font-bold text-slate-900">
+                  <td className="p-2.5 sm:p-3 font-mono font-bold text-brand-900 whitespace-nowrap">{w.id}</td>
+                  <td className="p-2.5 sm:p-3 font-semibold text-slate-800 whitespace-nowrap">{w.departmentName}</td>
+                  <td className="p-2.5 sm:p-3 font-semibold text-slate-700">{w.typeOfWork}</td>
+                  <td className="p-2.5 sm:p-3 text-right font-mono">{w.measurements?.areaCoveredSqM?.toLocaleString() || 0}</td>
+                  <td className="p-2.5 sm:p-3 text-right font-mono font-bold text-slate-900">
                     {w.totalAmountPKR?.toLocaleString()}
                   </td>
-                  <td className="p-3 text-right font-mono text-emerald-700 font-bold">
+                  <td className="p-2.5 sm:p-3 text-right font-mono text-emerald-700 font-bold">
                     {(w.payment?.advanceReceived || 0).toLocaleString()}
                   </td>
-                  <td className="p-3 text-right font-mono text-rose-700 font-bold">
+                  <td className="p-2.5 sm:p-3 text-right font-mono text-rose-700 font-bold">
                     {(w.payment?.paymentDue || 0).toLocaleString()}
                   </td>
-                  <td className="p-3 text-center font-bold text-slate-700">{w.status}</td>
+                  <td className="p-2.5 sm:p-3 text-center font-bold text-slate-700">{w.status}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
               <tr className="bg-brand-900 text-white font-semibold">
-                <td colSpan={4} className="p-3 text-right uppercase text-amber-400">Totals:</td>
-                <td className="p-3 text-right font-mono">PKR {totalSpent.toLocaleString()}</td>
-                <td className="p-3 text-right font-mono text-emerald-300">PKR {totalAdvance.toLocaleString()}</td>
-                <td className="p-3 text-right font-mono text-rose-300">PKR {totalDue.toLocaleString()}</td>
-                <td className="p-3"></td>
+                <td colSpan={4} className="p-2.5 sm:p-3 text-right uppercase text-amber-400">Totals:</td>
+                <td className="p-2.5 sm:p-3 text-right font-mono">PKR {totalSpent.toLocaleString()}</td>
+                <td className="p-2.5 sm:p-3 text-right font-mono text-emerald-300">PKR {totalAdvance.toLocaleString()}</td>
+                <td className="p-2.5 sm:p-3 text-right font-mono text-rose-300">PKR {totalDue.toLocaleString()}</td>
+                <td className="p-2.5 sm:p-3"></td>
               </tr>
             </tfoot>
           </table>
