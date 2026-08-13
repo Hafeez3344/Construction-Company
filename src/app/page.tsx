@@ -99,12 +99,12 @@ export default function DashboardPage() {
           <div className="flex items-center gap-3">
             <AlertCircle className="w-5 h-5 text-brand-950" />
             <span>
-              Notice: You have <span className="underline font-black">{pendingApprovalsCount} work order(s)</span> pending approval or inspection sign-off.
+              Notice: You have <span className="underline font-bold">{pendingApprovalsCount} work order(s)</span> pending approval or inspection sign-off.
             </span>
           </div>
           <button
             onClick={() => setSelectedStatus('Pending')}
-            className="bg-brand-950 text-white hover:bg-brand-900 px-3 py-1.5 rounded-lg text-xs font-extrabold whitespace-nowrap shadow"
+            className="bg-brand-950 text-white hover:bg-brand-900 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap shadow"
           >
             Filter Pending
           </button>
@@ -115,8 +115,8 @@ export default function DashboardPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-black text-brand-900">Work Orders Dashboard</h1>
-            <span className="bg-brand-100 text-brand-900 font-extrabold text-xs px-2.5 py-0.5 rounded-full">
+            <h1 className="text-2xl font-bold text-brand-900">Work Orders Dashboard</h1>
+            <span className="bg-brand-100 text-brand-900 font-semibold text-xs px-2.5 py-0.5 rounded-full">
               {totalOrders} Total
             </span>
           </div>
@@ -128,7 +128,7 @@ export default function DashboardPage() {
         {role !== 'Client' && (
           <Link
             href="/work-orders/new"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-950 font-black px-6 py-3 rounded-xl shadow-lg transition-transform transform active:scale-95 text-sm"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-transform transform active:scale-95 text-sm"
           >
             <Plus className="w-5 h-5 stroke-[2.5]" />
             Add New Work Order
@@ -143,8 +143,8 @@ export default function DashboardPage() {
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Work Orders</p>
-            <p className="text-2xl font-black text-brand-900 mt-1">{totalOrders}</p>
-            <p className="text-[11px] text-emerald-600 font-semibold mt-0.5">
+            <p className="text-2xl font-bold text-brand-900 mt-1">{totalOrders}</p>
+            <p className="text-xs text-emerald-600 font-semibold mt-0.5">
               {completedCount} Completed / {ongoingCount} Active
             </p>
           </div>
@@ -157,10 +157,10 @@ export default function DashboardPage() {
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Amount Spent</p>
-            <p className="text-xl font-black text-brand-900 mt-1">
+            <p className="text-xl font-bold text-brand-900 mt-1">
               PKR {(totalExpenditure / 1000000).toFixed(2)} M
             </p>
-            <p className="text-[11px] text-slate-500 font-medium mt-0.5">
+            <p className="text-xs text-slate-500 font-medium mt-0.5">
               PKR {totalExpenditure.toLocaleString()}
             </p>
           </div>
@@ -173,10 +173,10 @@ export default function DashboardPage() {
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Pending Dues</p>
-            <p className="text-xl font-black text-rose-700 mt-1">
+            <p className="text-xl font-bold text-rose-700 mt-1">
               PKR {(totalPendingPayment / 1000000).toFixed(2)} M
             </p>
-            <p className="text-[11px] text-rose-600 font-medium mt-0.5">
+            <p className="text-xs text-rose-600 font-medium mt-0.5">
               Across {workOrders.filter(w => (w.payment?.paymentDue || 0) > 0).length} orders
             </p>
           </div>
@@ -189,8 +189,8 @@ export default function DashboardPage() {
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Ongoing On-Site</p>
-            <p className="text-2xl font-black text-blue-700 mt-1">{ongoingCount}</p>
-            <p className="text-[11px] text-slate-500 font-medium mt-0.5">
+            <p className="text-2xl font-bold text-blue-700 mt-1">{ongoingCount}</p>
+            <p className="text-xs text-slate-500 font-medium mt-0.5">
               Active Site Operations
             </p>
           </div>
@@ -317,17 +317,17 @@ export default function DashboardPage() {
               {/* Card Header */}
               <div className="p-5 space-y-3 border-b border-slate-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-black font-mono text-brand-900">{wo.id}</span>
+                  <span className="text-sm font-bold font-mono text-brand-900">{wo.id}</span>
                   <StatusBadge status={wo.status} size="sm" />
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-extrabold text-slate-900 line-clamp-1">{wo.location}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 line-clamp-1">{wo.location}</h3>
                   <p className="text-xs text-slate-500 font-medium truncate mt-0.5">{wo.departmentName}</p>
                 </div>
 
                 <div className="flex items-center gap-2 pt-1">
-                  <span className="bg-amber-100 text-amber-900 font-bold text-[11px] px-2 py-0.5 rounded">
+                  <span className="bg-amber-100 text-amber-900 font-bold text-xs px-2 py-0.5 rounded">
                     {wo.typeOfWork} Work
                   </span>
                   <span className="text-xs font-semibold text-slate-600">
@@ -341,7 +341,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div>
                     <span className="text-slate-400 font-semibold block">Total Cost:</span>
-                    <span className="font-extrabold text-brand-900 font-mono">
+                    <span className="font-semibold text-brand-900 font-mono">
                       PKR {wo.totalAmountPKR.toLocaleString()}
                     </span>
                   </div>
@@ -355,7 +355,7 @@ export default function DashboardPage() {
 
                 {/* Progress Bar */}
                 <div className="space-y-1">
-                  <div className="flex justify-between text-[11px] font-bold text-slate-700">
+                  <div className="flex justify-between text-xs font-bold text-slate-700">
                     <span>Completion</span>
                     <span>{wo.measurements?.totalWorkCompletedPct}%</span>
                   </div>
@@ -425,14 +425,14 @@ export default function DashboardPage() {
                     <td className="p-3 font-mono font-bold text-brand-900 whitespace-nowrap">{wo.id}</td>
                     <td className="p-3 max-w-xs">
                       <p className="font-bold text-slate-900 truncate">{wo.location}</p>
-                      <p className="text-[11px] text-slate-500 truncate">{wo.departmentName}</p>
+                      <p className="text-xs text-slate-500 truncate">{wo.departmentName}</p>
                     </td>
                     <td className="p-3 font-semibold text-slate-700">{wo.typeOfWork}</td>
                     <td className="p-3 text-right font-mono font-bold text-slate-900">
                       {wo.totalAmountPKR.toLocaleString()}
                     </td>
                     <td className="p-3 text-center">
-                      <span className="font-extrabold text-slate-800">{wo.measurements?.totalWorkCompletedPct}%</span>
+                      <span className="font-semibold text-slate-800">{wo.measurements?.totalWorkCompletedPct}%</span>
                     </td>
                     <td className="p-3">
                       <StatusBadge status={wo.status} size="sm" />
@@ -486,3 +486,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

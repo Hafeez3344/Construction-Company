@@ -69,7 +69,7 @@ export default function BackupPage() {
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
         <div className="flex items-center gap-2">
           <Database className="w-6 h-6 text-amber-500" />
-          <h1 className="text-2xl font-black text-brand-900">Data Backup & System Maintenance</h1>
+          <h1 className="text-2xl font-bold text-brand-900">Data Backup & System Maintenance</h1>
         </div>
         <p className="text-xs text-slate-500 mt-1">
           Keep offline backups of all measurement sheets and work order records in JSON or CSV formats.
@@ -93,7 +93,7 @@ export default function BackupPage() {
               <FileJson className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Full Data Backup (JSON)</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Full Data Backup (JSON)</h3>
               <p className="text-xs text-slate-500">Download complete dataset including site photos, measurements & approvals.</p>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function BackupPage() {
               <FileSpreadsheet className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Work Orders Spreadsheet (CSV)</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Work Orders Spreadsheet (CSV)</h3>
               <p className="text-xs text-slate-500">Export work orders into Excel / CSV format for accounting.</p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function BackupPage() {
               <Upload className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Restore JSON Backup</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Restore JSON Backup</h3>
               <p className="text-xs text-slate-500">Import a previously saved JSON backup file into local storage.</p>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function BackupPage() {
               <RotateCcw className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Reset Demo Dataset</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Reset Demo Dataset</h3>
               <p className="text-xs text-slate-500">Revert all work orders back to the pre-seeded Jandool Construction demo dataset.</p>
             </div>
           </div>
@@ -170,3 +170,4 @@ export default function BackupPage() {
     </div>
   );
 }
+

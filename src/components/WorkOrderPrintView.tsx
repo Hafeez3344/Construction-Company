@@ -49,7 +49,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
                 <HardHat className="w-10 h-10 stroke-[2]" />
               </div>
               <div>
-                <h1 className="text-2xl font-black text-brand-900 uppercase tracking-wide">
+                <h1 className="text-2xl font-bold text-brand-900 uppercase tracking-wide">
                   JANDOOL CONSTRUCTION COMPANY
                 </h1>
                 <p className="text-xs font-semibold text-amber-700 uppercase tracking-widest">
@@ -62,7 +62,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
             </div>
             <div className="text-right border-l-2 border-amber-400 pl-4 py-1">
               <span className="text-xs font-bold uppercase text-slate-500 block">Work Order Voucher</span>
-              <span className="text-lg font-extrabold text-brand-900 font-mono">{workOrder.id}</span>
+              <span className="text-lg font-semibold text-brand-900 font-mono">{workOrder.id}</span>
               <div className="mt-1">
                 <StatusBadge status={workOrder.status} size="sm" />
               </div>
@@ -72,7 +72,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
         {/* Section 1: General Info */}
         <div className="space-y-2">
-          <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+          <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
             1. General Information
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs border border-slate-300 p-3 rounded-md bg-slate-50/50">
@@ -113,7 +113,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
         {/* Section 2: Work Done Details */}
         <div className="space-y-2">
-          <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+          <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
             2. Work Done Details
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs border border-slate-300 p-3 rounded-md bg-slate-50/50">
@@ -140,7 +140,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
         {/* Section 3: Measurement Table */}
         <div className="space-y-2">
-          <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+          <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
             3. Measurement Sheet Details
           </h3>
           <table className="print-table w-full text-xs text-left border border-slate-300">
@@ -174,7 +174,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
               <tr className="bg-amber-50/60">
                 <td className="p-2 font-bold text-brand-900 border border-slate-300">Area Covered (Length × Width)</td>
                 <td className="p-2 font-semibold border border-slate-300">Sq Meter (m²)</td>
-                <td className="p-2 font-extrabold text-brand-900 text-right border border-slate-300">
+                <td className="p-2 font-semibold text-brand-900 text-right border border-slate-300">
                   {measurements.areaCoveredSqM.toLocaleString()} m²
                 </td>
                 <td className="p-2 text-slate-700 font-medium border border-slate-300">{measurements.remarks.area || 'Auto-Calculated'}</td>
@@ -215,7 +215,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
         {/* Section 4: Materials & Expenses Table */}
         <div className="space-y-2">
-          <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+          <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
             4. Materials & Expenses Statement
           </h3>
           <table className="print-table w-full text-xs text-left border border-slate-300">
@@ -246,7 +246,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
               ))}
             </tbody>
             <tfoot>
-              <tr className="bg-brand-900 text-white font-extrabold">
+              <tr className="bg-brand-900 text-white font-semibold">
                 <td colSpan={5} className="p-2.5 text-right uppercase tracking-wider text-amber-400 border border-slate-900">
                   Grand Total Amount (PKR):
                 </td>
@@ -260,7 +260,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
           {/* Amount in Words Box */}
           <div className="bg-amber-50 border-2 border-amber-300 p-3 rounded-md text-xs mt-2">
-            <span className="font-extrabold text-amber-900 uppercase block mb-0.5">Amount in Words:</span>
+            <span className="font-semibold text-amber-900 uppercase block mb-0.5">Amount in Words:</span>
             <p className="font-bold text-slate-900 italic text-sm">
               &ldquo;{workOrder.amountInWords || 'Zero PKR Only'}&rdquo;
             </p>
@@ -295,7 +295,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
         {/* Site Progress Photos (If available) */}
         {photos && photos.length > 0 && (
           <div className="space-y-2">
-            <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+            <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
               Site Progress Attachments ({photos.length})
             </h3>
             <div className="grid grid-cols-2 gap-4 pt-1">
@@ -317,7 +317,7 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
 
         {/* Section 5: Approval Signatures */}
         <div className="pt-6 space-y-3">
-          <h3 className="text-xs font-extrabold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
+          <h3 className="text-xs font-semibold text-brand-900 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded border-l-4 border-brand-900">
             5. Signatures & Approvals
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs pt-4 text-center">
@@ -325,13 +325,13 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
             {/* Prepared By */}
             <div className="border border-slate-300 p-3 rounded bg-white flex flex-col justify-between min-h-[110px]">
               <div>
-                <span className="text-[10px] font-extrabold text-slate-500 uppercase block mb-2">Prepared By</span>
+                <span className="text-[10px] font-semibold text-slate-500 uppercase block mb-2">Prepared By</span>
                 <p className="font-bold text-slate-900 text-xs">{approvals.preparedBy.name || 'Site Engineer'}</p>
                 <p className="text-[10px] text-slate-500">{approvals.preparedBy.date || 'Date: ______'}</p>
               </div>
               <div className="border-t border-slate-400 pt-1 mt-3">
                 {approvals.preparedBy.signed ? (
-                  <span className="text-emerald-700 font-extrabold text-[11px] inline-flex items-center gap-1">
+                  <span className="text-emerald-700 font-semibold text-xs inline-flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5" /> SIGNED & STAMPED
                   </span>
                 ) : (
@@ -343,13 +343,13 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
             {/* Checked By */}
             <div className="border border-slate-300 p-3 rounded bg-white flex flex-col justify-between min-h-[110px]">
               <div>
-                <span className="text-[10px] font-extrabold text-slate-500 uppercase block mb-2">Checked By</span>
+                <span className="text-[10px] font-semibold text-slate-500 uppercase block mb-2">Checked By</span>
                 <p className="font-bold text-slate-900 text-xs">{approvals.checkedBy.name || 'Assistant Engineer'}</p>
                 <p className="text-[10px] text-slate-500">{approvals.checkedBy.date || 'Date: ______'}</p>
               </div>
               <div className="border-t border-slate-400 pt-1 mt-3">
                 {approvals.checkedBy.signed ? (
-                  <span className="text-emerald-700 font-extrabold text-[11px] inline-flex items-center gap-1">
+                  <span className="text-emerald-700 font-semibold text-xs inline-flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5" /> SIGNED & STAMPED
                   </span>
                 ) : (
@@ -361,13 +361,13 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
             {/* Approved By */}
             <div className="border border-slate-300 p-3 rounded bg-white flex flex-col justify-between min-h-[110px]">
               <div>
-                <span className="text-[10px] font-extrabold text-slate-500 uppercase block mb-2">Approved By</span>
+                <span className="text-[10px] font-semibold text-slate-500 uppercase block mb-2">Approved By</span>
                 <p className="font-bold text-slate-900 text-xs">{approvals.approvedBy.name || 'Managing Director'}</p>
                 <p className="text-[10px] text-slate-500">{approvals.approvedBy.date || 'Date: ______'}</p>
               </div>
               <div className="border-t border-slate-400 pt-1 mt-3">
                 {approvals.approvedBy.signed ? (
-                  <span className="text-emerald-700 font-extrabold text-[11px] inline-flex items-center gap-1">
+                  <span className="text-emerald-700 font-semibold text-xs inline-flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5" /> APPROVED & STAMPED
                   </span>
                 ) : (
@@ -379,13 +379,13 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
             {/* Received By */}
             <div className="border border-slate-300 p-3 rounded bg-white flex flex-col justify-between min-h-[110px]">
               <div>
-                <span className="text-[10px] font-extrabold text-slate-500 uppercase block mb-2">Received By (Dept)</span>
+                <span className="text-[10px] font-semibold text-slate-500 uppercase block mb-2">Received By (Dept)</span>
                 <p className="font-bold text-slate-900 text-xs">{approvals.receivedBy.name || 'Client / SDO Officer'}</p>
                 <p className="text-[10px] text-slate-500">{approvals.receivedBy.date || 'Date: ______'}</p>
               </div>
               <div className="border-t border-slate-400 pt-1 mt-3">
                 {approvals.receivedBy.signed ? (
-                  <span className="text-emerald-700 font-extrabold text-[11px] inline-flex items-center gap-1">
+                  <span className="text-emerald-700 font-semibold text-xs inline-flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5" /> RECEIVED & SIGNED
                   </span>
                 ) : (
@@ -406,3 +406,4 @@ export const WorkOrderPrintView: React.FC<WorkOrderPrintViewProps> = ({ workOrde
     </div>
   );
 };
+

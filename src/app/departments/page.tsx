@@ -33,7 +33,7 @@ export default function DepartmentsPage() {
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
         <div className="flex items-center gap-2">
           <Building2 className="w-6 h-6 text-amber-500" />
-          <h1 className="text-2xl font-black text-brand-900">Department & Project Portfolio</h1>
+          <h1 className="text-2xl font-bold text-brand-900">Department & Project Portfolio</h1>
         </div>
         <p className="text-xs text-slate-500 mt-1">
           Work orders grouped by client government department and municipal agency.
@@ -52,14 +52,14 @@ export default function DepartmentsPage() {
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                 <div>
-                  <h2 className="text-lg font-black text-brand-900">{deptName}</h2>
+                  <h2 className="text-lg font-bold text-brand-900">{deptName}</h2>
                   <p className="text-xs text-slate-500 font-medium">
                     {orders.length} Active Work Orders | {completedCount} Completed
                   </p>
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-slate-400 font-bold block uppercase">Total Department Cost</span>
-                  <span className="text-lg font-black text-amber-600 font-mono">
+                  <span className="text-lg font-bold text-amber-600 font-mono">
                     PKR {deptTotalCost.toLocaleString()}
                   </span>
                 </div>
@@ -112,3 +112,4 @@ export default function DepartmentsPage() {
     </div>
   );
 }
+

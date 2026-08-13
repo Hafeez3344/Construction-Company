@@ -284,7 +284,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
           >
             <ArrowLeft className="w-4 h-4" /> Back to Dashboard
           </button>
-          <h1 className="text-2xl font-black text-brand-900">
+          <h1 className="text-2xl font-bold text-brand-900">
             {isEdit ? `Edit Work Order: ${id}` : 'Create New Work Order'}
           </h1>
           <p className="text-xs text-slate-500">
@@ -313,7 +313,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
         <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
           <Building className="w-5 h-5 text-amber-500" />
-          <h2 className="text-base font-extrabold text-brand-900 uppercase">1. General Information</h2>
+          <h2 className="text-base font-semibold text-brand-900 uppercase">1. General Information</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
@@ -422,7 +422,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                   isFinalCostOverridden ? 'bg-white border-amber-500' : 'bg-slate-100 border-slate-300'
                 }`}
               />
-              <label className="flex items-center gap-1 text-[11px] font-semibold text-slate-600 whitespace-nowrap">
+              <label className="flex items-center gap-1 text-xs font-semibold text-slate-600 whitespace-nowrap">
                 <input
                   type="checkbox"
                   checked={isFinalCostOverridden}
@@ -451,7 +451,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
         <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
           <Layers className="w-5 h-5 text-amber-500" />
-          <h2 className="text-base font-extrabold text-brand-900 uppercase">2. Work Done Details</h2>
+          <h2 className="text-base font-semibold text-brand-900 uppercase">2. Work Done Details</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
@@ -510,7 +510,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
         <div className="flex items-center justify-between border-b border-slate-200 pb-3">
           <div className="flex items-center gap-2">
             <Calculator className="w-5 h-5 text-amber-500" />
-            <h2 className="text-base font-extrabold text-brand-900 uppercase">3. Measurement Sheet Details</h2>
+            <h2 className="text-base font-semibold text-brand-900 uppercase">3. Measurement Sheet Details</h2>
           </div>
           <span className="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">
             Auto-calculates Area (Length × Width)
@@ -619,7 +619,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                       disabled={!isManualArea}
                       value={areaCoveredSqM}
                       onChange={(e) => setAreaCoveredSqM(parseFloat(e.target.value) || 0)}
-                      className={`w-full px-2 py-1.5 border rounded font-mono font-extrabold text-brand-900 ${
+                      className={`w-full px-2 py-1.5 border rounded font-mono font-semibold text-brand-900 ${
                         isManualArea ? 'bg-white border-amber-500' : 'bg-amber-100/50 border-amber-300'
                       }`}
                     />
@@ -681,7 +681,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                     max="100"
                     value={totalWorkCompletedPct || ''}
                     onChange={(e) => setTotalWorkCompletedPct(parseFloat(e.target.value) || 0)}
-                    className="w-full px-2 py-1.5 border border-brand-500 rounded font-mono font-extrabold text-brand-900 bg-white"
+                    className="w-full px-2 py-1.5 border border-brand-500 rounded font-mono font-semibold text-brand-900 bg-white"
                   />
                 </td>
                 <td className="p-2">
@@ -701,7 +701,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
         {/* Visual Progress Bar */}
         <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-          <div className="flex justify-between text-xs font-extrabold text-slate-800">
+          <div className="flex justify-between text-xs font-semibold text-slate-800">
             <span>Visual Completion Progress Bar</span>
             <span className="text-brand-900">{totalWorkCompletedPct}% Completed</span>
           </div>
@@ -719,7 +719,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
         <div className="flex items-center justify-between border-b border-slate-200 pb-3">
           <div className="flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-amber-500" />
-            <h2 className="text-base font-extrabold text-brand-900 uppercase">4. Materials & Expenses Statement</h2>
+            <h2 className="text-base font-semibold text-brand-900 uppercase">4. Materials & Expenses Statement</h2>
           </div>
           <button
             type="button"
@@ -780,7 +780,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                       className="w-full px-2 py-1 border border-slate-300 rounded font-mono font-bold text-right text-slate-900 focus:outline-none focus:ring-1 focus:ring-brand-500"
                     />
                   </td>
-                  <td className="p-2 text-right font-extrabold font-mono text-brand-900 bg-slate-50">
+                  <td className="p-2 text-right font-semibold font-mono text-brand-900 bg-slate-50">
                     {(item.amount || 0).toLocaleString()}
                   </td>
                   <td className="p-1.5">
@@ -806,7 +806,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
               ))}
             </tbody>
             <tfoot>
-              <tr className="bg-brand-900 text-white font-extrabold">
+              <tr className="bg-brand-900 text-white font-semibold">
                 <td colSpan={5} className="p-3 text-right uppercase tracking-wider text-amber-400">
                   Total Amount (PKR):
                 </td>
@@ -823,10 +823,10 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
         {/* Live Amount in Words */}
         <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 p-4 rounded-xl space-y-1">
-          <span className="text-xs font-black uppercase text-amber-900 tracking-wider block">
+          <span className="text-xs font-bold uppercase text-amber-900 tracking-wider block">
             Amount in Words (Auto-Converted):
           </span>
-          <p className="text-base font-extrabold text-slate-900 italic">
+          <p className="text-base font-semibold text-slate-900 italic">
             &ldquo;{amountInWords}&rdquo;
           </p>
         </div>
@@ -837,7 +837,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
         
         {/* Vendor Info */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-          <h3 className="text-sm font-extrabold text-brand-900 uppercase border-b pb-2">
+          <h3 className="text-sm font-semibold text-brand-900 uppercase border-b pb-2">
             Supplier / Vendor Details
           </h3>
           <div className="space-y-3 text-xs">
@@ -876,7 +876,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
         {/* Payment Tracking */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-          <h3 className="text-sm font-extrabold text-brand-900 uppercase border-b pb-2">
+          <h3 className="text-sm font-semibold text-brand-900 uppercase border-b pb-2">
             Payment & Advance Tracking
           </h3>
           <div className="space-y-3 text-xs">
@@ -895,7 +895,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                 <span>Total Work Order Amount:</span>
                 <span className="font-mono">PKR {totalAmountPKR.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between font-extrabold text-rose-700 text-sm pt-1 border-t">
+              <div className="flex justify-between font-semibold text-rose-700 text-sm pt-1 border-t">
                 <span>Calculated Remaining Due:</span>
                 <span className="font-mono">PKR {paymentDuePKR.toLocaleString()}</span>
               </div>
@@ -909,7 +909,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
         <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
           <ImageIcon className="w-5 h-5 text-amber-500" />
-          <h2 className="text-base font-extrabold text-brand-900 uppercase">Site Progress Photos Upload</h2>
+          <h2 className="text-base font-semibold text-brand-900 uppercase">Site Progress Photos Upload</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -964,8 +964,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
-                <div className="p-2 text-[11px]">
-                  <span className="font-extrabold text-brand-900 bg-amber-100 px-1.5 py-0.5 rounded text-[10px]">
+                <div className="p-2 text-xs">
+                  <span className="font-semibold text-brand-900 bg-amber-100 px-1.5 py-0.5 rounded text-[10px]">
                     {photo.stage}
                   </span>
                   <p className="font-semibold text-slate-800 truncate mt-1">{photo.caption}</p>
@@ -980,14 +980,14 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
         <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
           <ShieldCheck className="w-5 h-5 text-amber-500" />
-          <h2 className="text-base font-extrabold text-brand-900 uppercase">5. Digital Approvals & Signatures</h2>
+          <h2 className="text-base font-semibold text-brand-900 uppercase">5. Digital Approvals & Signatures</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           
           {/* Prepared By */}
           <div className="border border-slate-200 p-4 rounded-xl bg-slate-50 space-y-2 text-xs">
-            <span className="font-extrabold text-slate-500 uppercase block">1. Prepared By</span>
+            <span className="font-semibold text-slate-500 uppercase block">1. Prepared By</span>
             <input
               type="text"
               placeholder="Name & Designation"
@@ -1014,7 +1014,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
           {/* Checked By */}
           <div className="border border-slate-200 p-4 rounded-xl bg-slate-50 space-y-2 text-xs">
-            <span className="font-extrabold text-slate-500 uppercase block">2. Checked By</span>
+            <span className="font-semibold text-slate-500 uppercase block">2. Checked By</span>
             <input
               type="text"
               placeholder="Name & Designation"
@@ -1041,7 +1041,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
           {/* Approved By */}
           <div className="border border-slate-200 p-4 rounded-xl bg-slate-50 space-y-2 text-xs">
-            <span className="font-extrabold text-slate-500 uppercase block">3. Approved By</span>
+            <span className="font-semibold text-slate-500 uppercase block">3. Approved By</span>
             <input
               type="text"
               placeholder="Name & Designation"
@@ -1068,7 +1068,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
 
           {/* Received By */}
           <div className="border border-slate-200 p-4 rounded-xl bg-slate-50 space-y-2 text-xs">
-            <span className="font-extrabold text-slate-500 uppercase block">4. Received By</span>
+            <span className="font-semibold text-slate-500 uppercase block">4. Received By</span>
             <input
               type="text"
               placeholder="Name & Designation"
@@ -1107,7 +1107,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
         </button>
         <button
           type="submit"
-          className="flex items-center gap-2 bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-950 hover:to-brand-800 text-white font-extrabold text-sm px-8 py-3 rounded-xl shadow-lg transition-transform active:scale-95"
+          className="flex items-center gap-2 bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-950 hover:to-brand-800 text-white font-semibold text-sm px-8 py-3 rounded-xl shadow-lg transition-transform active:scale-95"
         >
           <Save className="w-5 h-5 text-amber-400" />
           {isEdit ? 'Save Changes' : 'Create & Save Work Order'}
@@ -1117,3 +1117,4 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
     </form>
   );
 };
+

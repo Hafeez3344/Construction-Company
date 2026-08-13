@@ -73,7 +73,7 @@ export default function ReportsPage() {
         <div>
           <div className="flex items-center gap-2">
             <BarChart3 className="w-6 h-6 text-amber-500" />
-            <h1 className="text-2xl font-black text-brand-900">Reports & Executive Analytics</h1>
+            <h1 className="text-2xl font-bold text-brand-900">Reports & Executive Analytics</h1>
           </div>
           <p className="text-xs text-slate-500 mt-1">
             Financial breakdown, work-type distribution, and project completion summaries for Jandool Construction.
@@ -94,28 +94,28 @@ export default function ReportsPage() {
         
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
           <p className="text-xs font-bold text-slate-500 uppercase">Grand Expenditure</p>
-          <p className="text-2xl font-black text-brand-900 mt-1">PKR {(totalSpent / 1000000).toFixed(2)} M</p>
-          <p className="text-[11px] text-slate-500 mt-0.5">PKR {totalSpent.toLocaleString()} Total</p>
+          <p className="text-2xl font-bold text-brand-900 mt-1">PKR {(totalSpent / 1000000).toFixed(2)} M</p>
+          <p className="text-xs text-slate-500 mt-0.5">PKR {totalSpent.toLocaleString()} Total</p>
         </div>
 
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
           <p className="text-xs font-bold text-slate-500 uppercase">Average WO Value</p>
-          <p className="text-2xl font-black text-amber-600 mt-1">PKR {(avgCost / 1000000).toFixed(2)} M</p>
-          <p className="text-[11px] text-slate-500 mt-0.5">Across {totalOrders} Work Orders</p>
+          <p className="text-2xl font-bold text-amber-600 mt-1">PKR {(avgCost / 1000000).toFixed(2)} M</p>
+          <p className="text-xs text-slate-500 mt-0.5">Across {totalOrders} Work Orders</p>
         </div>
 
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
           <p className="text-xs font-bold text-slate-500 uppercase">Advance Recovered</p>
-          <p className="text-2xl font-black text-emerald-700 mt-1">PKR {(totalAdvance / 1000000).toFixed(2)} M</p>
-          <p className="text-[11px] text-emerald-600 mt-0.5">
+          <p className="text-2xl font-bold text-emerald-700 mt-1">PKR {(totalAdvance / 1000000).toFixed(2)} M</p>
+          <p className="text-xs text-emerald-600 mt-0.5">
             {totalSpent > 0 ? ((totalAdvance / totalSpent) * 100).toFixed(1) : 0}% Collected
           </p>
         </div>
 
         <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
           <p className="text-xs font-bold text-slate-500 uppercase">Outstanding Dues</p>
-          <p className="text-2xl font-black text-rose-700 mt-1">PKR {(totalDue / 1000000).toFixed(2)} M</p>
-          <p className="text-[11px] text-rose-600 mt-0.5">Pending Payment</p>
+          <p className="text-2xl font-bold text-rose-700 mt-1">PKR {(totalDue / 1000000).toFixed(2)} M</p>
+          <p className="text-xs text-rose-600 mt-0.5">Pending Payment</p>
         </div>
 
       </div>
@@ -126,7 +126,7 @@ export default function ReportsPage() {
         {/* Expenditure by Type of Work */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
           <div className="flex items-center justify-between border-b pb-3">
-            <h2 className="text-base font-extrabold text-brand-900 uppercase">Expenditure by Work Category</h2>
+            <h2 className="text-base font-semibold text-brand-900 uppercase">Expenditure by Work Category</h2>
             <PieChart className="w-5 h-5 text-amber-500" />
           </div>
 
@@ -151,7 +151,7 @@ export default function ReportsPage() {
         {/* Status Distribution Progress */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
           <div className="flex items-center justify-between border-b pb-3">
-            <h2 className="text-base font-extrabold text-brand-900 uppercase">Work Order Status Distribution</h2>
+            <h2 className="text-base font-semibold text-brand-900 uppercase">Work Order Status Distribution</h2>
             <TrendingUp className="w-5 h-5 text-amber-500" />
           </div>
 
@@ -180,7 +180,7 @@ export default function ReportsPage() {
 
       {/* Detail Executive Ledger Table */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4">
-        <h2 className="text-base font-extrabold text-brand-900 uppercase border-b pb-3">
+        <h2 className="text-base font-semibold text-brand-900 uppercase border-b pb-3">
           Summary Ledger Statement
         </h2>
 
@@ -219,7 +219,7 @@ export default function ReportsPage() {
               ))}
             </tbody>
             <tfoot>
-              <tr className="bg-brand-900 text-white font-extrabold">
+              <tr className="bg-brand-900 text-white font-semibold">
                 <td colSpan={4} className="p-3 text-right uppercase text-amber-400">Totals:</td>
                 <td className="p-3 text-right font-mono">PKR {totalSpent.toLocaleString()}</td>
                 <td className="p-3 text-right font-mono text-emerald-300">PKR {totalAdvance.toLocaleString()}</td>
@@ -234,3 +234,4 @@ export default function ReportsPage() {
     </div>
   );
 }
+
