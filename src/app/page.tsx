@@ -112,15 +112,15 @@ export default function DashboardPage() {
       )}
 
       {/* Hero Welcome Header & Action */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-brand-900">Work Orders Dashboard</h1>
-            <span className="bg-brand-100 text-brand-900 font-semibold text-xs px-2.5 py-0.5 rounded-full">
+            <h1 className="text-lg sm:text-2xl font-bold text-brand-900">Work Orders Dashboard</h1>
+            <span className="bg-brand-100 text-brand-900 font-semibold text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 rounded-full">
               {totalOrders} Total
             </span>
           </div>
-          <p className="text-xs text-slate-500 mt-1">
+          <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
             Digitally track measurement sheets, site photos, material costs, and approvals for Jandool Construction.
           </p>
         </div>
@@ -128,104 +128,104 @@ export default function DashboardPage() {
         {role !== 'Client' && (
           <Link
             href="/work-orders/new"
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-transform transform active:scale-95 text-sm"
+            className="flex items-center justify-center gap-1.5 sm:gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-950 font-bold px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl shadow transition-transform transform active:scale-95 text-xs sm:text-sm"
           >
-            <Plus className="w-5 h-5 stroke-[2.5]" />
+            <Plus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
             Add New Work Order
           </Link>
         )}
       </div>
 
       {/* Metrics Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         
         {/* Card 1: Total Orders */}
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Work Orders</p>
-            <p className="text-2xl font-bold text-brand-900 mt-1">{totalOrders}</p>
-            <p className="text-xs text-emerald-600 font-semibold mt-0.5">
-              {completedCount} Completed / {ongoingCount} Active
+            <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Total Orders</p>
+            <p className="text-lg sm:text-2xl font-bold text-brand-900 mt-0.5 sm:mt-1">{totalOrders}</p>
+            <p className="text-[10px] sm:text-xs text-emerald-600 font-semibold mt-0.5">
+              {completedCount} Done / {ongoingCount} Active
             </p>
           </div>
-          <div className="bg-brand-50 p-3 rounded-xl text-brand-700">
-            <FileText className="w-7 h-7" />
+          <div className="bg-brand-50 p-2 sm:p-3 rounded-lg sm:rounded-xl text-brand-700">
+            <FileText className="w-5 h-5 sm:w-7 sm:h-7" />
           </div>
         </div>
 
         {/* Card 2: Total Expenditure */}
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Amount Spent</p>
-            <p className="text-xl font-bold text-brand-900 mt-1">
+            <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Amount Spent</p>
+            <p className="text-base sm:text-xl font-bold text-brand-900 mt-0.5 sm:mt-1">
               PKR {(totalExpenditure / 1000000).toFixed(2)} M
             </p>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">
+            <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">
               PKR {totalExpenditure.toLocaleString()}
             </p>
           </div>
-          <div className="bg-amber-50 p-3 rounded-xl text-amber-600">
-            <DollarSign className="w-7 h-7" />
+          <div className="bg-amber-50 p-2 sm:p-3 rounded-lg sm:rounded-xl text-amber-600">
+            <DollarSign className="w-5 h-5 sm:w-7 sm:h-7" />
           </div>
         </div>
 
         {/* Card 3: Pending Payments */}
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Pending Dues</p>
-            <p className="text-xl font-bold text-rose-700 mt-1">
+            <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Pending Dues</p>
+            <p className="text-base sm:text-xl font-bold text-rose-700 mt-0.5 sm:mt-1">
               PKR {(totalPendingPayment / 1000000).toFixed(2)} M
             </p>
-            <p className="text-xs text-rose-600 font-medium mt-0.5">
-              Across {workOrders.filter(w => (w.payment?.paymentDue || 0) > 0).length} orders
+            <p className="text-[10px] sm:text-xs text-rose-600 font-medium mt-0.5 truncate">
+              {workOrders.filter(w => (w.payment?.paymentDue || 0) > 0).length} orders
             </p>
           </div>
-          <div className="bg-rose-50 p-3 rounded-xl text-rose-600">
-            <TrendingUp className="w-7 h-7" />
+          <div className="bg-rose-50 p-2 sm:p-3 rounded-lg sm:rounded-xl text-rose-600">
+            <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7" />
           </div>
         </div>
 
         {/* Card 4: Active Projects */}
-        <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Ongoing On-Site</p>
-            <p className="text-2xl font-bold text-blue-700 mt-1">{ongoingCount}</p>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">
-              Active Site Operations
+            <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Ongoing On-Site</p>
+            <p className="text-lg sm:text-2xl font-bold text-blue-700 mt-0.5 sm:mt-1">{ongoingCount}</p>
+            <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">
+              Active Site Ops
             </p>
           </div>
-          <div className="bg-blue-50 p-3 rounded-xl text-blue-700">
-            <Clock className="w-7 h-7" />
+          <div className="bg-blue-50 p-2 sm:p-3 rounded-lg sm:rounded-xl text-blue-700">
+            <Clock className="w-5 h-5 sm:w-7 sm:h-7" />
           </div>
         </div>
 
       </div>
 
       {/* Toolbar: Search, Filters & View Toggle */}
-      <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="bg-white p-3.5 sm:p-4 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3">
           
           {/* Search Input */}
           <div className="relative w-full md:w-80">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5 sm:top-3" />
             <input
               type="text"
               placeholder="Search WO No, Location, Dept..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none"
+              className="w-full pl-9 pr-3 py-1.5 sm:py-2 border border-slate-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none"
             />
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full md:w-auto">
             {/* Department Filter */}
             <select
               value={selectedDept}
               onChange={(e) => setSelectedDept(e.target.value)}
-              className="px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none"
+              className="px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none flex-1 sm:flex-initial"
             >
-              <option value="All">All Departments ({departmentsList.length})</option>
+              <option value="All">All Depts ({departmentsList.length})</option>
               {departmentsList.map(d => (
                 <option key={d} value={d}>{d}</option>
               ))}
@@ -235,9 +235,9 @@ export default function DashboardPage() {
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value as any)}
-              className="px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none"
+              className="px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none flex-1 sm:flex-initial"
             >
-              <option value="All">All Work Types</option>
+              <option value="All">All Types</option>
               <option value="Road">Road</option>
               <option value="PPC">PPC (Concrete)</option>
               <option value="Drain">Drain</option>
@@ -249,7 +249,7 @@ export default function DashboardPage() {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value as any)}
-              className="px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none"
+              className="px-2.5 py-1.5 sm:px-3 sm:py-2 border border-slate-300 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 focus:outline-none flex-1 sm:flex-initial"
             >
               <option value="All">All Statuses</option>
               <option value="Pending">Pending</option>
@@ -268,7 +268,7 @@ export default function DashboardPage() {
                 }`}
                 title="Grid Card View"
               >
-                <Grid className="w-4 h-4" />
+                <Grid className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
               <button
                 onClick={() => setViewMode('table')}
@@ -277,7 +277,7 @@ export default function DashboardPage() {
                 }`}
                 title="Table View"
               >
-                <List className="w-4 h-4" />
+                <List className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
             </div>
           </div>
@@ -308,46 +308,46 @@ export default function DashboardPage() {
       ) : viewMode === 'grid' ? (
         
         /* GRID CARD VIEW */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
           {filteredWorkOrders.map((wo) => (
             <div
               key={wo.id}
-              className="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group"
             >
               {/* Card Header */}
-              <div className="p-5 space-y-3 border-b border-slate-100">
+              <div className="p-3.5 sm:p-5 space-y-2 sm:space-y-3 border-b border-slate-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold font-mono text-brand-900">{wo.id}</span>
+                  <span className="text-xs sm:text-sm font-bold font-mono text-brand-900">{wo.id}</span>
                   <StatusBadge status={wo.status} size="sm" />
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-900 line-clamp-1">{wo.location}</h3>
-                  <p className="text-xs text-slate-500 font-medium truncate mt-0.5">{wo.departmentName}</p>
+                  <h3 className="text-xs sm:text-sm font-semibold text-slate-900 line-clamp-1">{wo.location}</h3>
+                  <p className="text-[11px] sm:text-xs text-slate-500 font-medium truncate mt-0.5">{wo.departmentName}</p>
                 </div>
 
-                <div className="flex items-center gap-2 pt-1">
-                  <span className="bg-amber-100 text-amber-900 font-bold text-xs px-2 py-0.5 rounded">
+                <div className="flex items-center gap-1.5 sm:gap-2 pt-0.5 sm:pt-1">
+                  <span className="bg-amber-100 text-amber-900 font-bold text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded">
                     {wo.typeOfWork} Work
                   </span>
-                  <span className="text-xs font-semibold text-slate-600">
-                    Chainage: {wo.chainageFrom} - {wo.chainageTo}
+                  <span className="text-[10px] sm:text-xs font-semibold text-slate-600 truncate">
+                    Ch: {wo.chainageFrom} - {wo.chainageTo}
                   </span>
                 </div>
               </div>
 
               {/* Card Body Metrics */}
-              <div className="p-5 bg-slate-50/50 space-y-3">
-                <div className="grid grid-cols-2 gap-2 text-xs">
+              <div className="p-3.5 sm:p-5 bg-slate-50/50 space-y-2.5 sm:space-y-3">
+                <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs">
                   <div>
                     <span className="text-slate-400 font-semibold block">Total Cost:</span>
-                    <span className="font-semibold text-brand-900 font-mono">
+                    <span className="font-semibold text-brand-900 font-mono text-xs sm:text-sm">
                       PKR {wo.totalAmountPKR.toLocaleString()}
                     </span>
                   </div>
                   <div>
                     <span className="text-slate-400 font-semibold block">Area Covered:</span>
-                    <span className="font-bold text-slate-800 font-mono">
+                    <span className="font-bold text-slate-800 font-mono text-xs sm:text-sm">
                       {wo.measurements?.areaCoveredSqM.toLocaleString()} m²
                     </span>
                   </div>
@@ -355,13 +355,13 @@ export default function DashboardPage() {
 
                 {/* Progress Bar */}
                 <div className="space-y-1">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
+                  <div className="flex justify-between text-[11px] sm:text-xs font-bold text-slate-700">
                     <span>Completion</span>
                     <span>{wo.measurements?.totalWorkCompletedPct}%</span>
                   </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-slate-200 rounded-full h-1.5 sm:h-2 overflow-hidden">
                     <div
-                      className="bg-brand-600 h-2 rounded-full transition-all"
+                      className="bg-brand-600 h-1.5 sm:h-2 rounded-full transition-all"
                       style={{ width: `${Math.min(100, Math.max(0, wo.measurements?.totalWorkCompletedPct || 0))}%` }}
                     />
                   </div>
@@ -369,10 +369,10 @@ export default function DashboardPage() {
               </div>
 
               {/* Card Action Buttons */}
-              <div className="p-4 bg-white border-t border-slate-100 flex items-center justify-between gap-2">
+              <div className="p-3 sm:p-4 bg-white border-t border-slate-100 flex items-center justify-between gap-1.5 sm:gap-2">
                 <Link
                   href={`/work-orders/${encodeURIComponent(wo.id)}`}
-                  className="flex-1 flex items-center justify-center gap-1.5 bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs py-2 rounded-xl shadow-sm transition-colors"
+                  className="flex-1 flex items-center justify-center gap-1 bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs py-1.5 sm:py-2 rounded-lg sm:rounded-xl shadow-sm transition-colors"
                 >
                   <Eye className="w-3.5 h-3.5 text-amber-400" /> View / Print
                 </Link>
