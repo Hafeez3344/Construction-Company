@@ -261,7 +261,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 max-w-5xl mx-auto pb-16">
+    <form onSubmit={handleSubmit} className="space-y-8 w-full pb-16">
       
       {/* Toast Notification */}
       {successToast && (
@@ -448,8 +448,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       </div>
 
       {/* 2. WORK DONE DETAILS SECTION */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5 sm:pb-3">
           <Layers className="w-5 h-5 text-amber-500" />
           <h2 className="text-base font-semibold text-brand-900 uppercase">2. Work Done Details</h2>
         </div>
@@ -506,8 +506,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       </div>
 
       {/* 3. MEASUREMENT TABLE (Fixed Rows with Auto-Math) */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-2.5 sm:pb-3">
           <div className="flex items-center gap-2">
             <Calculator className="w-5 h-5 text-amber-500" />
             <h2 className="text-base font-semibold text-brand-900 uppercase">3. Measurement Sheet Details</h2>
@@ -715,8 +715,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       </div>
 
       {/* 4. MATERIALS & EXPENSES TABLE (Dynamic Rows with Live Sum & Words) */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-2.5 sm:pb-3">
           <div className="flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-amber-500" />
             <h2 className="text-base font-semibold text-brand-900 uppercase">4. Materials & Expenses Statement</h2>
@@ -836,7 +836,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Vendor Info */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3">
           <h3 className="text-sm font-semibold text-brand-900 uppercase border-b pb-2">
             Supplier / Vendor Details
           </h3>
@@ -875,7 +875,7 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
         </div>
 
         {/* Payment Tracking */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+        <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3">
           <h3 className="text-sm font-semibold text-brand-900 uppercase border-b pb-2">
             Payment & Advance Tracking
           </h3>
@@ -906,8 +906,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       </div>
 
       {/* SITE PROGRESS PHOTOS UPLOAD */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5 sm:pb-3">
           <ImageIcon className="w-5 h-5 text-amber-500" />
           <h2 className="text-base font-semibold text-brand-900 uppercase">Site Progress Photos Upload</h2>
         </div>
@@ -977,8 +977,8 @@ export const WorkOrderForm: React.FC<WorkOrderFormProps> = ({ initialData, isEdi
       </div>
 
       {/* 5. APPROVAL & DIGITAL SIGNATURE SECTION */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+      <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200 space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5 sm:pb-3">
           <ShieldCheck className="w-5 h-5 text-amber-500" />
           <h2 className="text-base font-semibold text-brand-900 uppercase">5. Digital Approvals & Signatures</h2>
         </div>

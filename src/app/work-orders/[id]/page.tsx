@@ -51,7 +51,7 @@ export default function ViewWorkOrderPage() {
 
   return (
     <div className="space-y-6 pb-16">
-      
+
       {/* Top Breadcrumb & Action Toolbar */}
       <div className="no-print flex flex-wrap items-center justify-between gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
         <button

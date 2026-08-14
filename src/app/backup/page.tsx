@@ -63,7 +63,7 @@ export default function BackupPage() {
   };
 
   return (
-    <div className="space-y-4 sm:space-y-8 max-w-4xl mx-auto pb-12">
+    <div className="space-y-4 sm:space-y-8 w-full pb-12">
       
       {/* Header Banner */}
       <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
